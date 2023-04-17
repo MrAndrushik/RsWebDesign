@@ -1,0 +1,83 @@
+@import '@styles/consts';
+
+.container {
+    max-width: 1210px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 0 auto;
+
+    @media (max-width: $lg) {
+        flex-direction: column-reverse;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+.contentColumn {
+    max-width: 800px;
+    padding-top: 60px;
+
+    @media (max-width: $lg) {
+        text-align: center;
+        padding-top: 0;
+    }
+}
+
+.span {
+    color: $gold;
+}
+
+.title {
+    margin-bottom: 20px;
+    text-align: left;
+
+    @media (max-width: $lg) {
+        text-align: center;
+    }
+}
+
+.text {
+    margin-bottom: 40px;
+    max-width: 630px;
+
+    @media (max-width: $lg) {
+        max-width: 100%;
+    }
+}
+
+.contactColumns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    min-width: 300px;
+
+    @media (max-width: $lg) {
+        min-width: auto;
+        max-width: 100%;
+    }
+}
+
+.contactBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: $lg) {
+        display: none;
+    }
+}
+
+.contactData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caption {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    font-family: 'Golos Text';
+}

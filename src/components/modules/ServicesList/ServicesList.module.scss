@@ -1,0 +1,65 @@
+@import '@styles/consts';
+
+.ServicesList {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: $xl) {
+        gap: 20px;
+    }
+
+    @media (max-width: $lg) {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.service {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 350px;
+    padding: 20px;
+    width: 100%;
+
+    &:nth-child(1) {
+        background: $blue;
+    }
+    &:nth-child(2) {
+        background: $mint;
+    }
+    &:nth-child(3) {
+        background: $orange;
+    }
+    &:nth-child(4) {
+        background: $brown;
+    }
+
+    @media (max-width: $lg) {
+        width: 300px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 20px;
+}

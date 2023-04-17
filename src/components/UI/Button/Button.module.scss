@@ -1,0 +1,213 @@
+@import '@styles/consts';
+
+.default {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;
+    padding: 0 40px;
+    height: 53px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+
+    @media (max-width: $md) {
+        height: 42px;
+        padding: 0 28px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.header {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: $dark-brown;
+    padding: 10px 28px;
+    background: $orange;
+    height: 42px;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+}
+
+.mainProjects {
+    border: 2px solid #ffffff;
+    color: #fff;
+    background: transparent;
+
+    &:hover {
+        background: #fff;
+        color: $orange;
+    }
+
+    @media (max-width: $md) {
+        min-width: 230px;
+    }
+}
+
+.mainRequest {
+    background: $dark-brown;
+    color: #fff;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+    @media (max-width: $md) {
+        min-width: 230px;
+    }
+}
+
+.ourMission {
+    background: transparent;
+    border: 2px solid $dark-brown;
+    color: $dark-brown;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+}
+
+.ourAdvantages {
+    background: transparent;
+    border: 2px solid $dark-brown;
+    color: $dark-brown;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+}
+
+.services {
+    background: transparent;
+    border: 2px solid $dark-brown;
+    color: $dark-brown;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+}
+
+.serviceList {
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    width: 100%;
+    height: 46px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.questionsBlock {
+    background: $dark-brown;
+    color: #fff;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.moveToProject {
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #fff;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    @media (max-width: $lg) {
+        width: 100%;
+        margin-top: 16px;
+        height: 53px;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 22px;
+        height: 42px;
+    }
+}
+
+.moveToProjectStick {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    @media (max-width: $lg) {
+        display: none;
+    }
+}
+
+.contactsBtn {
+    background: $orange;
+    color: $dark-brown;
+
+    &:hover {
+        background: $dark-brown;
+        color: $orange;
+    }
+
+    @media (max-width: $lg) {
+        margin: 0 auto;
+    }
+}
+
+.footerBtn {
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    height: 46px;
+    padding: 0 30px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    @media (max-width: $lg) {
+        width: 100%;
+    }
+}
+
+.modalBtn {
+    margin-top: 30px;
+    background: $gold;
+    color: $dark-brown;
+
+    &:hover {
+        color: $gold;
+        background: $dark-brown;
+    }
+
+    @media (max-width: $lg) {
+        margin-top: 60px;
+    }
+}
+
+.errorPage {
+    background: $gold;
+    color: $dark-brown;
+
+    &:hover {
+        color: $gold;
+        background: $dark-brown;
+    }
+}

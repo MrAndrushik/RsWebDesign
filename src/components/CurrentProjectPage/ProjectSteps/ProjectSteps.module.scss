@@ -1,0 +1,123 @@
+@import '@styles/consts';
+.ProjectSteps {
+    padding: 86px 16px;
+
+    @media (max-width: $md) {
+        padding: 70px 16px;
+    }
+}
+
+.block {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+
+    @media (max-width: $md) {
+        gap: 20px;
+    }
+}
+
+.tabGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $lg) {
+        justify-content: center;
+        gap: 60px;
+    }
+
+    @media (max-width: $md) {
+        gap: 30px;
+    }
+}
+
+.tabList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 70px;
+    align-items: center;
+
+    @media (max-width: $md) {
+        margin-top: 0;
+    }
+}
+
+.tabBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.tab {
+    color: #828282;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    background: none;
+    border: none;
+
+    @media (max-width: $lg) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    padding: 28px;
+
+    @media (max-width: $lg) {
+        max-width: 356px;
+    }
+
+    @media (max-width: $md) {
+        max-width: 185px;
+        padding: 15px;
+    }
+}
+
+.text {
+    font-size: 18px;
+    line-height: 20px;
+    position: relative;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    left: 0;
+    top: 5px;
+
+    @media (max-width: $md) {
+        width: 4px;
+        height: 4px;
+        min-width: 4px;
+        top: 0px;
+    }
+}

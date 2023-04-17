@@ -1,0 +1,95 @@
+@import '@styles/consts';
+
+.FAQ {
+    padding: 160px 0px;
+
+    @media (max-width: $md) {
+        padding: 70px 0px;
+    }
+}
+
+.block {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.searchBlock {
+    max-width: 730px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 16px;
+}
+
+.searchInput {
+    border: 1px solid #331110;
+}
+
+.searchTags {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    @media (max-width: $md) {
+        justify-content: flex-start;
+        padding: 0 16px;
+        flex-wrap: nowrap;
+        max-width: 100vw;
+        overflow: scroll;
+        gap: 20px;
+
+        & {
+            scrollbar-width: none;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+.questions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 16px;
+
+    @media (max-width: $md) {
+        gap: 20px;
+    }
+}
+
+.categoryBtn {
+    padding: 0;
+    background: none;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    text-transform: none;
+    border: none;
+    color: $dark-brown;
+    transition: $transition;
+
+    &:hover {
+        color: $orange;
+    }
+}
+
+.categoryBtnActive {
+    color: $orange;
+}
+
+.notFound {
+    color: $brown;
+    font-size: 20px;
+}

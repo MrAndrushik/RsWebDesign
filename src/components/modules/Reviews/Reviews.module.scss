@@ -1,0 +1,163 @@
+@import '@styles/consts';
+
+.Reviews {
+    @media (max-width: $md) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.swiper {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+    --swiper-navigation-size: 34px;
+    --swiper-navigation-sides-offset: 30px;
+    --swiper-navigation-color: #331110;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 120px;
+        z-index: 2;
+
+        @media (max-width: $md) {
+            width: 70px;
+        }
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:after {
+        right: 0;
+        background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+}
+
+.defSlide {
+    width: auto;
+}
+
+.slide {
+    width: 550px;
+    background: #fff;
+    min-height: 330px;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+
+    @media (max-width: $lg) {
+        min-height: 300px;
+    }
+
+    @media (max-width: $md) {
+        min-height: 350px;
+        width: calc(100vw - 140px);
+    }
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+
+    @media (max-width: $md) {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+    }
+}
+
+.imgDesktop {
+    @media (max-width: $md) {
+        display: none;
+    }
+}
+
+.imgMobile {
+    display: none;
+
+    @media (max-width: $md) {
+        display: block;
+    }
+}
+
+.mobileBlock {
+    @media (max-width: $md) {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: $dark-brown;
+}
+
+.name {
+    font-family: 'Golos Text';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 15px;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 25px;
+        margin-bottom: 5px;
+    }
+}
+
+.position {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+
+    @media (max-width: $md) {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 0px;
+    }
+}
+
+.company {
+    font-size: 14px;
+    line-height: 16px;
+    color: $brown;
+
+    @media (max-width: $md) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.review {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 20px;
+
+    @media (max-width: $md) {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}

@@ -1,0 +1,177 @@
+@import '@styles/consts';
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+    position: relative;
+    z-index: 10;
+}
+
+.block {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel {
+    max-width: 700px;
+    background: #fff;
+    width: 100%;
+    position: relative;
+    padding: 30px 16px 40px;
+    margin: 0 auto;
+
+    @media (max-width: $lg) {
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.title {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+
+    @media (max-width: $lg) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background: none;
+    border: none;
+    transition: $transition;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.form {
+    color: $dark-brown;
+    max-width: 515px;
+    font-family: 'Anonymous Pro';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    margin: 30px auto 0;
+
+    @media (max-width: $lg) {
+        margin: 30px auto 0;
+        max-width: 343px;
+    }
+}
+
+.input {
+    height: 36px;
+    font-family: inherit;
+    border: 1px solid #331110;
+    color: $dark-brown;
+    outline: none;
+    background: none;
+    padding: 0 10px;
+    width: 100%;
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
+}
+
+.textarea {
+    font-family: inherit;
+    border: 1px solid #331110;
+    color: $dark-brown;
+    outline: none;
+    background: none;
+    padding: 10px;
+    width: 100%;
+    resize: none;
+    height: 70px;
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+
+    @media (max-width: $lg) {
+        flex-direction: column;
+    }
+}
+
+.label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.labelText {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    width: fit-content;
+}
+
+.labelTextRequired {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 6px;
+        height: 6px;
+        background: url('@assets/icons/required.svg') no-repeat center center;
+        background-size: contain;
+    }
+}
+
+.error {
+    font-size: 14px;
+    color: #eb5050;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.enterFrom {
+    opacity: 0;
+}
+
+.enterTo {
+    opacity: 1;
+}

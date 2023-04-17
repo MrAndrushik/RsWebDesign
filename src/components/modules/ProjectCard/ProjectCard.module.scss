@@ -1,0 +1,179 @@
+@import '@styles/consts';
+
+.wrapperLarge {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blockLarge {
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 33px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $lg) {
+        justify-content: flex-start;
+        padding: 0;
+        gap: 0px;
+        min-height: unset;
+        height: 100%;
+    }
+}
+
+.contentLarge {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 636px;
+
+    @media (max-width: $xl) {
+        max-width: 500px;
+    }
+
+    @media (max-width: $lg) {
+        gap: 15px;
+        padding: 28px;
+    }
+
+    @media (max-width: $md) {
+        padding: 16px;
+    }
+}
+
+.titleLarge {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+
+    @media (max-width: $lg) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+.textLarge {
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 700;
+
+    @media (max-width: $lg) {
+        font-weight: 400;
+    }
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.imgLarge {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @media (max-width: $xl) {
+        width: 450px;
+    }
+
+    @media (max-width: $lg) {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        width: 100%;
+        margin-top: auto;
+    }
+}
+
+.wrapperSmall {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blockSmall {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $lg) {
+        justify-content: flex-start;
+        padding: 0;
+        gap: 0px;
+        min-height: unset;
+        height: 100%;
+    }
+}
+
+.contentSmall {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 28px;
+
+    @media (max-width: $md) {
+        padding: 16px;
+    }
+}
+
+.titleSmall {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+
+    @media (max-width: $md) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+.textSmall {
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 400;
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.imgSmall {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: auto;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.enterFrom {
+    opacity: 0;
+}
+
+.enterTo {
+    opacity: 1;
+}

@@ -1,0 +1,50 @@
+@import '@styles/consts';
+
+.wrapper {
+    height: calc(100vh - $header-desktop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $lg) {
+        height: calc(100vh - $header-mobile);
+    }
+}
+
+.wrapperAbsolute {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Spinner {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: $orange;
+    border-radius: 50%;
+    position: relative;
+    animation: roll 1s ease-in-out infinite alternate;
+}
+.Spinner:after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: $dark-brown transparent;
+}
+@keyframes roll {
+    0% {
+        transform: translateX(-150%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(150%) rotate(360deg);
+    }
+}

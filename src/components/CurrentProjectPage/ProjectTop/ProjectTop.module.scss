@@ -1,0 +1,106 @@
+@import '@styles/consts';
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 33px;
+    padding: 200px 16px 170px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $lg) {
+        padding: 0;
+        gap: 20px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 636px;
+
+    @media (max-width: $xl) {
+        max-width: 500px;
+    }
+
+    @media (max-width: $lg) {
+        padding: 28px;
+        gap: 15px;
+        padding-bottom: 0;
+        max-width: 100%;
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+
+    @media (max-width: $lg) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+.text {
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 700;
+
+    @media (max-width: $lg) {
+        font-weight: 400;
+    }
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.img {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 100%;
+
+    @media (max-width: $xl) {
+        width: 450px;
+    }
+
+    @media (max-width: $lg) {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.appLink {
+    width: fit-content;
+    display: flex;
+    height: 100%;
+    margin-top: 40px;
+
+    @media (max-width: $lg) {
+        margin-top: 10px;
+    }
+
+    @media (max-width: $md) {
+        max-width: 90px;
+        height: auto;
+        margin-top: 0;
+    }
+}

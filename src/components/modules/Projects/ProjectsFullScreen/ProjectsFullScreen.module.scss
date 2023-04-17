@@ -1,0 +1,46 @@
+@import '@styles/consts';
+
+.ProjectsFullScreen {
+    @media (max-width: $lg) {
+        padding: 100px 0;
+
+        .swiper {
+            padding: 0 16px 60px;
+        }
+    }
+
+    @media (max-width: $md) {
+        padding: 70px 0;
+    }
+}
+
+.swiper {
+    --swiper-pagination-color: #d66300;
+    --swiper-pagination-bottom: 30px;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+
+    @media (max-width: $lg) {
+        --swiper-pagination-bullet-size: 20px;
+        --swiper-pagination-bottom: 0px;
+        --swiper-pagination-bullet-inactive-color: #d9d9d9;
+        --swiper-pagination-bullet-horizontal-gap: 10px;
+        & .slide {
+            max-width: 420px;
+            height: auto;
+        }
+    }
+
+    @media (max-width: $md) {
+        & .slide {
+            max-width: 255px;
+        }
+    }
+}
+
+.subtitleMobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}

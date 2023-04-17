@@ -1,0 +1,111 @@
+@import './fonts';
+@import './consts';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+p {
+    font-weight: 400;
+    font-family: 'Anonymous Pro';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Golos Text';
+}
+
+html,
+body {
+    -ms-overflow-style: none; // IE 10+
+    scrollbar-width: thin;
+}
+
+// html {
+//     overflow: -moz-scrollbars-none;
+// }
+
+body {
+    font-weight: 400;
+    font-family: 'Golos Text', 'Anonymous Pro';
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    font-family: 'Golos Text';
+
+    &:focus {
+        outline: 1px solid $blue;
+    }
+}
+
+.section {
+    padding: 130px 16px;
+
+    @media (max-width: $md) {
+        padding: 70px 16px;
+    }
+}
+
+.sectionDark {
+    background: #f5f5f5;
+}
+
+.sectionUnpaddedLeftRight {
+    padding: 130px 0;
+
+    @media (max-width: $md) {
+        padding: 70px 0;
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: $dark-brown;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (max-width: $md) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+.text {
+    font-size: 18px;
+    line-height: 20px;
+    color: #331110;
+
+    @media (max-width: $lg) {
+    }
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}

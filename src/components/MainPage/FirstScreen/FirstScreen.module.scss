@@ -1,0 +1,50 @@
+@import '@styles/consts';
+
+.section {
+    background: $orange;
+    padding: 0 16px;
+}
+
+.block {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - $header-desktop);
+    justify-content: center;
+    margin: 0 auto;
+
+    @media (max-width: $lg) {
+        height: calc(100vh - $header-mobile);
+    }
+}
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    color: $dark-brown;
+
+    @media (max-width: $md) {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+.span {
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    @media (max-width: $md) {
+        gap: 20px;
+        justify-content: center;
+    }
+}

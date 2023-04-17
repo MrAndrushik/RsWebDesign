@@ -1,0 +1,74 @@
+@import '@styles/consts';
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    outline: none;
+    border: none;
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: $brown;
+    background: #f3eeea;
+    align-items: baseline;
+
+    @media (max-width: $md) {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+.open {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    transition: all 0.3s ease;
+    min-width: 25px;
+
+    @media (max-width: $lg) {
+        display: none;
+    }
+}
+
+.pannel {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    color: $dark-brown;
+    background: #f3eeea;
+    font-family: 'Anonymous Pro';
+
+    @media (max-width: $lg) {
+        padding-top: 0;
+        height: 100%;
+    }
+
+    @media (max-width: $md) {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+.transitionBlock {
+    @media (max-width: $lg) {
+        height: 100%;
+    }
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.opacity0 {
+    opacity: 0;
+    max-height: 0;
+}
+
+.opacity100 {
+    opacity: 1;
+    max-height: 1000px;
+}

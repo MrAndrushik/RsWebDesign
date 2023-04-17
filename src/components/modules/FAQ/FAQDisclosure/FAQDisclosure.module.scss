@@ -1,0 +1,63 @@
+@import '@styles/consts';
+
+.button {
+    background: #f5f5f5;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    border: none;
+    text-align: left;
+    width: 100%;
+
+    @media (max-width: $md) {
+        padding: 10px 15px;
+    }
+}
+
+.text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    padding-top: 5px;
+    color: $dark-brown;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.body {
+    font-family: 'Anonymous Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: $dark-brown;
+    padding-left: 65px;
+    padding-top: 15px;
+    padding-right: 15px;
+
+    @media (max-width: $md) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.icon {
+    min-width: 30px;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.enterFrom {
+    opacity: 0;
+    max-height: 0;
+}
+
+.enterTo {
+    opacity: 1;
+    max-height: 1000px;
+}

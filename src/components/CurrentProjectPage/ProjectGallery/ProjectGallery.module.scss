@@ -1,0 +1,54 @@
+@import '@styles/consts';
+.ProjectGallery {
+    padding: 100px 16px;
+    background: $gray;
+
+    @media (max-width: $md) {
+        padding: 70px 16px;
+    }
+}
+
+.block {
+    display: flex;
+    max-width: 1320px;
+    margin: 0 auto;
+    gap: 40px;
+
+    @media (max-width: $lg) {
+        flex-direction: column-reverse;
+    }
+}
+
+.swiper {
+    width: 650px;
+    min-width: 650px;
+    --swiper-navigation-size: 24px;
+    --swiper-navigation-color: $dark-brown;
+    --swiper-navigation-sides-offset: 0px;
+
+    @media (max-width: $lg) {
+        min-width: unset;
+        max-width: 100%;
+    }
+}
+
+.defSlide {
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 15px;
+    align-items: flex-start;
+
+    @media (max-width: $lg) {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.img {
+    width: 100%;
+}

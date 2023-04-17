@@ -1,0 +1,34 @@
+@import '@styles/consts';
+
+.Input {
+    height: 36px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    background: transparent;
+    padding: 0 10px;
+    font-family: 'Anonymous Pro';
+
+    &:focus {
+        outline: none;
+        border: 1px solid $blue;
+    }
+}
+
+.light {
+    border: 1px solid #f3eeea;
+    color: #fff;
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
+}
+
+.dark {
+    border: 1px solid $dark-brown;
+    color: $dark-brown;
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
+}
