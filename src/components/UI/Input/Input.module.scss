@@ -1,6 +1,9 @@
 @import '@styles/consts';
 
 .Input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    box-shadow: none;
     height: 36px;
     width: 100%;
     font-size: 14px;
