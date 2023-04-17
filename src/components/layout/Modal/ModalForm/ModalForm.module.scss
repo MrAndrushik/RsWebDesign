@@ -109,6 +109,9 @@
 }
 
 .textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+    box-shadow: none;
     font-family: inherit;
     border: 1px solid #331110;
     color: $dark-brown;
