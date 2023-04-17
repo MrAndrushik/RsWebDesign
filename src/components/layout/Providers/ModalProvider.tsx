@@ -5,11 +5,18 @@ interface ModalContextType {
     setIsOpen: (value: boolean) => void;
 }
 
+const defaultValue: ModalContextType = {
+    isOpen: false,
+    setIsOpen: (value: boolean) => {
+        return value;
+    },
+};
+
 interface ModalProviderProps {
     children: ReactNode;
 }
 
-export const ModalContext = createContext<ModalContextType | null>(null);
+export const ModalContext = createContext<ModalContextType>(defaultValue);
 
 export const ModalProvider = ({ children }: ModalProviderProps) => {
     const [isOpen, setIsOpen] = useState(false);
