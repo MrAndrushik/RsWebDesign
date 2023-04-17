@@ -19,7 +19,7 @@ export const Footer = ({ className }: FooterProps) => {
             <div className={cls.container}>
                 <div className={cls.wrapper}>
                     <div className={cls.column1}>
-                        <img src={Logo} alt='RocketSoft' />
+                        <img loading='lazy' src={Logo} alt='RocketSoft' />
                         <div className={cls.contactData}>
                             <p>email@rs.com</p>
                             <p>Россия, г. Москва ул. Производственная 11/8</p>

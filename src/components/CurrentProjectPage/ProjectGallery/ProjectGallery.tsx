@@ -49,7 +49,7 @@ export const ProjectGallery = ({ gallery, bgColor, textColor }: ProjectGalleryPr
                     {gallery.images.map((item, index) => (
                         <SwiperSlide key={index} className={cls.defSlide}>
                             <div className={cls.slide}>
-                                <img className={`${cls.img}`} src={item} alt={`${item}-photo`} />
+                                <img loading='lazy' className={`${cls.img}`} src={item} alt={`${item}-photo`} />
                             </div>
                         </SwiperSlide>
                     ))}

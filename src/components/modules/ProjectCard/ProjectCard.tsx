@@ -41,9 +41,9 @@ export const ProjectCard = ({ className, type = 'small', project }: ProjectCardP
                         </Button>
                     )}
                     {isMobile ? (
-                        <img className={cls.imgLarge} src={project.previewImg} alt='Background' />
+                        <img loading='lazy' className={cls.imgLarge} src={project.previewImg} alt='Background' />
                     ) : (
-                        <img className={cls.imgLarge} src={project.firstScreenImg} alt='Background' />
+                        <img loading='lazy' className={cls.imgLarge} src={project.firstScreenImg} alt='Background' />
                     )}
                 </div>
                 {isMobile && (
@@ -69,7 +69,7 @@ export const ProjectCard = ({ className, type = 'small', project }: ProjectCardP
                     <h2 className={cls.titleSmall}>{project.title}</h2>
                     <p className={cls.textSmall}>{project.description}</p>
                 </div>
-                <img className={cls.imgSmall} src={project.previewImg} alt='Background' />
+                <img loading='lazy' className={cls.imgSmall} src={project.previewImg} alt='Background' />
                 {!isMobile && (
                     <Transition
                         show={isHovered}

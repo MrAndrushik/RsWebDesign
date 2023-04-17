@@ -47,7 +47,7 @@ export const ProjectTop = ({
                         </a>
                     )}
                 </div>
-                <img className={cls.img} src={firstScreenImg} alt='Background' />
+                <img loading='lazy' className={cls.img} src={firstScreenImg} alt='Background' />
             </div>
         </section>
     );

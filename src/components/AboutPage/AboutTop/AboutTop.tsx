@@ -19,7 +19,7 @@ export const AboutTop = ({ className }: AboutTopProps) => {
                     <h1 className={`${cls.title} title`}>{t('rocketsoft')}</h1>
                     <p className={`${cls.text} text`}>{t('about-us-text')}</p>
                 </div>
-                <img className={cls.img} src={AboutImg} alt='about-presentation' />
+                <img loading='lazy' className={cls.img} src={AboutImg} alt='about-presentation' />
             </div>
         </section>
     );

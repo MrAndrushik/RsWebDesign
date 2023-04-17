@@ -89,6 +89,7 @@ export const Reviews = ({ className }: ReviewsProps) => {
                         <SwiperSlide key={index} className={cls.defSlide}>
                             <div className={cls.slide}>
                                 <img
+                                    loading='lazy'
                                     className={`${cls.imgDesktop} ${cls.img}`}
                                     src={item.img}
                                     alt={`${item.name}-photo`}
@@ -96,6 +97,7 @@ export const Reviews = ({ className }: ReviewsProps) => {
                                 <div className={cls.content}>
                                     <div className={cls.mobileBlock}>
                                         <img
+                                            loading='lazy'
                                             className={`${cls.imgMobile} ${cls.img}`}
                                             src={item.img}
                                             alt={`${item.name}-photo`}

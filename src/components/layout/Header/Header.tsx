@@ -75,7 +75,7 @@ export const Header = () => {
             >
                 <div className={cls.block}>
                     <Link to={ROUTES.MAIN_ROUTE}>
-                        <img src={Logo} alt='RocketSoft' />
+                        <img loading='lazy' src={Logo} alt='RocketSoft' />
                     </Link>
                     {isMobile && (
                         <button
