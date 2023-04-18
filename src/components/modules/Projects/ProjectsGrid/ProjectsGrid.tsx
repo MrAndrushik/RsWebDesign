@@ -24,7 +24,7 @@ export const ProjectsGrid = ({ className, data, title, titleTag = 'h2', cardTitl
     const sortedData = useMemo(
         () =>
             data.filter(
-                (project) => project.projectCategories?.includes(activeCategory) || activeCategory === t('category-all')
+                (project) => project.categories?.includes(activeCategory) || activeCategory === t('category-all')
             ),
         [activeCategory, data, t]
     );
@@ -53,16 +53,16 @@ export const ProjectsGrid = ({ className, data, title, titleTag = 'h2', cardTitl
                                 </button>
                             </li>
                             {categories.map((category) => (
-                                <li key={category} className={cls.item}>
+                                <li key={category.id} className={cls.item}>
                                     <button
-                                        onClick={() => setActiveCategory(category)}
+                                        onClick={() => setActiveCategory(category.id)}
                                         className={
-                                            activeCategory === category
+                                            activeCategory === category.id
                                                 ? `${cls.categoryBtn} ${cls.categoryBtnActive}`
                                                 : cls.categoryBtn
                                         }
                                     >
-                                        {category}
+                                        {category.title}
                                     </button>
                                 </li>
                             ))}
@@ -76,13 +76,13 @@ export const ProjectsGrid = ({ className, data, title, titleTag = 'h2', cardTitl
                             type='small'
                             key={project.id}
                             project={{
-                                bgColor: project.bgColor,
+                                bg_color: project.bg_color,
                                 title: project.title,
-                                description: project.description,
+                                short_description: project.short_description,
                                 id: project.id,
-                                textColor: project.textColor,
-                                previewImg: project.previewImg,
-                                firstScreenImg: project.firstScreenImg,
+                                bg_text_color: project.bg_text_color,
+                                preview_image: project.preview_image,
+                                header_image: project.header_image,
                             }}
                         />
                     ))}

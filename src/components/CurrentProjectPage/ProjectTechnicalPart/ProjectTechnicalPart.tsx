@@ -4,19 +4,19 @@ import cls from './ProjectTechnicalPart.module.scss';
 import { ProjectType } from 'types/types';
 import { Subtitle } from '@components/UI/Subtitle/Subtitle';
 
-type ProjectTechnicalPartProps = Pick<ProjectType, 'technicalPart' | 'textColor' | 'bgColor'>;
+type ProjectTechnicalPartProps = Pick<ProjectType, 'tech' | 'bg_text_color' | 'bg_color'>;
 
-export const ProjectTechnicalPart = ({ technicalPart, bgColor, textColor }: ProjectTechnicalPartProps) => {
+export const ProjectTechnicalPart = ({ tech, bg_text_color, bg_color }: ProjectTechnicalPartProps) => {
     const { t } = useTranslation();
 
     return (
-        <section style={{ background: bgColor }} className={cn(cls.ProjectTechnicalPart, {}, [])}>
+        <section style={{ background: bg_color }} className={cn(cls.ProjectTechnicalPart, {}, [])}>
             <div className={cls.block}>
-                <Subtitle style={{ color: bgColor, background: textColor }}>{t('technical-part')}</Subtitle>
+                <Subtitle style={{ color: bg_color, background: bg_text_color }}>{t('technical-part')}</Subtitle>
                 <ul className={cls.grid}>
-                    {technicalPart.map((item) => (
-                        <li style={{ color: textColor }} className={cls.item} key={item.name}>
-                            <span>{item.name}:</span>
+                    {tech?.items.map((item) => (
+                        <li style={{ color: bg_text_color }} className={cls.item} key={item.title}>
+                            <span>{item.title}:</span>
                             <span>{item.value}</span>
                         </li>
                     ))}

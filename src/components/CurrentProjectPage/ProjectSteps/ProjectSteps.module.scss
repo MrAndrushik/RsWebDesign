@@ -75,12 +75,9 @@
     }
 }
 
-.list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.groupOfList {
     max-width: 500px;
-    padding: 28px;
+    width: 100%;
 
     @media (max-width: $lg) {
         max-width: 356px;
@@ -88,6 +85,17 @@
 
     @media (max-width: $md) {
         max-width: 185px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px;
+    width: 100%;
+
+    @media (max-width: $md) {
         padding: 15px;
     }
 }

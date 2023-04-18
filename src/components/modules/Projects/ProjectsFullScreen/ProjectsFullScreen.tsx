@@ -51,20 +51,20 @@ export const ProjectsFullScreen = ({ className, data, title }: ProjectsFullScree
             >
                 {data.map((project) => (
                     <SwiperSlide
-                        style={!isMobile ? { background: project.bgColor } : {}}
+                        style={!isMobile ? { background: project.bg_color } : {}}
                         key={project.id}
                         className={cls.slide}
                     >
                         <ProjectCard
                             type='large'
                             project={{
-                                bgColor: project.bgColor,
+                                bg_color: project.bg_color,
                                 title: project.title,
-                                description: project.description,
+                                short_description: project.short_description,
                                 id: project.id,
-                                textColor: project.textColor,
-                                previewImg: project.previewImg,
-                                firstScreenImg: project.firstScreenImg,
+                                bg_text_color: project.bg_text_color,
+                                preview_image: project.preview_image,
+                                header_image: project.header_image,
                             }}
                         />
                     </SwiperSlide>

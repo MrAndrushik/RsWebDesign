@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 export default function CurrentProjectPage() {
     const params = useParams<{ slug: string }>();
     const { data, isLoading } = useProjectsData();
-    const currentData = useMemo(() => data.filter((project) => project.id === params.slug)[0], [data, params.slug]);
+    const currentData = useMemo(() => data.filter((project) => project.title === params.slug)[0], [data, params.slug]);
 
     if (isLoading) return <Spinner type='withHeader' />;
 
@@ -27,25 +27,33 @@ export default function CurrentProjectPage() {
         <>
             <ProjectTop
                 title={currentData.title}
-                description={currentData.description}
-                websiteLink={currentData.websiteLink}
-                appStoreLink={currentData.appStoreLink}
-                googlePlayLink={currentData.googlePlayLink}
-                firstScreenImg={currentData.firstScreenImg}
-                bgColor={currentData.bgColor}
-                textColor={currentData.textColor}
+                short_description={currentData.short_description}
+                web_link={currentData.web_link}
+                app_store_link={currentData.app_store_link}
+                google_play_link={currentData.google_play_link}
+                header_image={currentData.header_image}
+                bg_color={currentData.bg_color}
+                bg_text_color={currentData.bg_text_color}
             />
-            <ProjectTask bgColor={currentData.bgColor} textColor={currentData.textColor} task={currentData.task} />
-            <ProjectSteps steps={currentData.steps} bgColor={currentData.bgColor} textColor={currentData.textColor} />
+            <ProjectTask
+                bg_color={currentData.bg_color}
+                bg_text_color={currentData.bg_text_color}
+                long_description={currentData.long_description}
+            />
+            <ProjectSteps
+                stages={currentData.stages}
+                bg_color={currentData.bg_color}
+                bg_text_color={currentData.bg_text_color}
+            />
             <ProjectGallery
-                bgColor={currentData.bgColor}
-                textColor={currentData.textColor}
-                gallery={currentData.gallery}
+                bg_color={currentData.bg_color}
+                bg_text_color={currentData.bg_text_color}
+                images={currentData.images}
             />
             <ProjectTechnicalPart
-                bgColor={currentData.bgColor}
-                textColor={currentData.textColor}
-                technicalPart={currentData.technicalPart}
+                bg_color={currentData.bg_color}
+                bg_text_color={currentData.bg_text_color}
+                tech={currentData.tech}
             />
             <Contacts />
         </>

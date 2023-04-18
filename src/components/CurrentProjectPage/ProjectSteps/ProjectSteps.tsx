@@ -6,8 +6,8 @@ import { Tab } from '@headlessui/react';
 import { Fragment } from 'react';
 import { ReactComponent as Arrow } from '@assets/icons/arrow.svg';
 
-type ProjectStepsProps = Pick<ProjectType, 'steps' | 'textColor' | 'bgColor'>;
-export const ProjectSteps = ({ steps, textColor, bgColor }: ProjectStepsProps) => {
+type ProjectStepsProps = Pick<ProjectType, 'stages' | 'bg_text_color' | 'bg_color'>;
+export const ProjectSteps = ({ stages, bg_color, bg_text_color }: ProjectStepsProps) => {
     const { t } = useTranslation();
 
     return (
@@ -17,30 +17,30 @@ export const ProjectSteps = ({ steps, textColor, bgColor }: ProjectStepsProps) =
                 <Tab.Group vertical>
                     <div className={cls.tabGroup}>
                         <Tab.List className={cls.tabList}>
-                            {steps.map((step, index) => (
+                            {stages.map((step, index) => (
                                 <Tab as={Fragment} key={step.title}>
                                     {({ selected }) => (
                                         <div className={cls.tabBlock}>
-                                            <button style={selected ? { color: bgColor } : {}} className={cls.tab}>
+                                            <button style={selected ? { color: bg_color } : {}} className={cls.tab}>
                                                 {step.title}
                                             </button>
-                                            {index !== steps.length - 1 && <Arrow />}
+                                            {index !== stages.length - 1 && <Arrow />}
                                         </div>
                                     )}
                                 </Tab>
                             ))}
                         </Tab.List>
-                        <Tab.Panels>
-                            {steps.map((step) => (
+                        <Tab.Panels className={cls.groupOfList}>
+                            {stages.map((step) => (
                                 <Tab.Panel
-                                    style={{ background: bgColor }}
+                                    style={{ background: bg_color }}
                                     className={cls.list}
                                     as='ul'
                                     key={step.title}
                                 >
-                                    {step.description.map((text, index) => (
-                                        <li style={{ color: textColor }} className={cls.text} key={index}>
-                                            <span className={cls.dot} style={{ background: textColor }}></span>
+                                    {step.content.map((text, index) => (
+                                        <li style={{ color: bg_text_color }} className={cls.text} key={index}>
+                                            <span className={cls.dot} style={{ background: bg_text_color }}></span>
                                             <p>{text}</p>
                                         </li>
                                     ))}

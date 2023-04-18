@@ -34,6 +34,14 @@
 
 .defSlide {
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.slide {
+    display: flex;
+    margin: 0 auto;
 }
 
 .content {
@@ -50,5 +58,11 @@
 }
 
 .img {
-    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: 600px;
+
+    @media (max-width: $md) {
+        max-height: 450px;
+    }
 }

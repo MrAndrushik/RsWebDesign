@@ -4,16 +4,16 @@ import cls from './ProjectTask.module.scss';
 import { ProjectType } from 'types/types';
 import { Subtitle } from '@components/UI/Subtitle/Subtitle';
 
-type ProjectTaskProps = Pick<ProjectType, 'bgColor' | 'textColor' | 'task'>;
+type ProjectTaskProps = Pick<ProjectType, 'bg_text_color' | 'bg_color' | 'long_description'>;
 
-export const ProjectTask = ({ bgColor, task, textColor }: ProjectTaskProps) => {
+export const ProjectTask = ({ bg_text_color, long_description, bg_color }: ProjectTaskProps) => {
     const { t } = useTranslation();
 
     return (
         <section className={cn(cls.ProjectTask, {}, [])}>
             <div className={cls.block}>
-                <Subtitle style={{ background: bgColor, color: textColor }}>{t('task')}</Subtitle>
-                <p className={cls.text}>{task}</p>
+                <Subtitle style={{ background: bg_color, color: bg_text_color }}>{t('task')}</Subtitle>
+                <p className={cls.text}>{long_description}</p>
             </div>
         </section>
     );

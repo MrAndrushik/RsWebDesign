@@ -9,9 +9,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-type ProjectGalleryProps = Pick<ProjectType, 'gallery' | 'bgColor' | 'textColor'>;
+type ProjectGalleryProps = Pick<ProjectType, 'bg_color' | 'bg_text_color' | 'images'>;
 
-export const ProjectGallery = ({ gallery, bgColor, textColor }: ProjectGalleryProps) => {
+export const ProjectGallery = ({ bg_color, bg_text_color, images }: ProjectGalleryProps) => {
     const { t } = useTranslation();
 
     return (
@@ -28,7 +28,7 @@ export const ProjectGallery = ({ gallery, bgColor, textColor }: ProjectGalleryPr
                         modifier: 3,
                         slideShadows: false,
                     }}
-                    initialSlide={1}
+                    initialSlide={0}
                     spaceBetween={30}
                     slidesPerView={'auto'}
                     centeredSlides={true}
@@ -46,7 +46,7 @@ export const ProjectGallery = ({ gallery, bgColor, textColor }: ProjectGalleryPr
                         },
                     }}
                 >
-                    {gallery.images.map((item, index) => (
+                    {images.links.map((item, index) => (
                         <SwiperSlide key={index} className={cls.defSlide}>
                             <div className={cls.slide}>
                                 <img className={`${cls.img}`} src={item} alt={`${item}-photo`} />
@@ -55,8 +55,8 @@ export const ProjectGallery = ({ gallery, bgColor, textColor }: ProjectGalleryPr
                     ))}
                 </Swiper>
                 <div className={cls.content}>
-                    <h2 className='title'>{gallery.title}</h2>
-                    <p className='text'>{gallery.description}</p>
+                    <h2 className='title'>{images.title}</h2>
+                    <p className='text'>{images.description}</p>
                 </div>
             </div>
         </section>
