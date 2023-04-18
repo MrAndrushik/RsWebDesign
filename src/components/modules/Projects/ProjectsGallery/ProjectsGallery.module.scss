@@ -17,6 +17,10 @@
 }
 
 .swiper {
+    --swiper-navigation-size: 34px;
+    --swiper-navigation-sides-offset: 30px;
+    --swiper-navigation-color: #331110;
+
     & .slide {
         width: 655px;
         height: auto;

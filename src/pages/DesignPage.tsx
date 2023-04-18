@@ -49,7 +49,13 @@ export default function DesignPage() {
     );
     return (
         <>
-            <Steps color={'#00DFCE'} data={stepsData} title={t('design')!} description={t('design-description')!} />
+            <Steps
+                titleTag={'h1'}
+                color={'#00DFCE'}
+                data={stepsData}
+                title={t('design')!}
+                description={t('design-description')!}
+            />
             <AdvantagesBlock data={advantagesData} title={t('advantages')!} button={false} />
             <ProjectsList title={t('example-of-same-work')} type='gallery' />
             <Tarrifs data={tarrifData} title={t('price-and-term')} />

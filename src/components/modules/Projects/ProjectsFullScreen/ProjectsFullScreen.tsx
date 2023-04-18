@@ -1,7 +1,7 @@
 import { ProjectCard } from '@components/modules/ProjectCard/ProjectCard';
 import { useMobile } from '@hooks/useMobile';
 import cn from 'classnames';
-import { Pagination } from 'swiper';
+import { Pagination, Autoplay, Mousewheel } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,8 +28,10 @@ export const ProjectsFullScreen = ({ className, data, title }: ProjectsFullScree
                 </div>
             )}
             <Swiper
+                speed={1000}
+                grabCursor={true}
                 className={cls.swiper}
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay, Mousewheel]}
                 spaceBetween={30}
                 slidesPerView={'auto'}
                 centeredSlides={true}
@@ -39,6 +41,12 @@ export const ProjectsFullScreen = ({ className, data, title }: ProjectsFullScree
                         slidesPerView: 1,
                         spaceBetween: 0,
                     },
+                }}
+                mousewheel={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
                 }}
             >
                 {data.map((project) => (

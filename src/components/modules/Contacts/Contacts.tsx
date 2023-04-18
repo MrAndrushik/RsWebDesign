@@ -4,12 +4,15 @@ import cls from './Contacts.module.scss';
 import { Button } from '@components/UI/Button/Button';
 import { Subtitle } from '@components/UI/Subtitle/Subtitle';
 import { useModal } from '@hooks/useModal';
+import { ElementType } from 'react';
+import { Text } from '@components/UI/Text/Text';
 
 interface ContactsProps {
     className?: string;
+    titleTag?: ElementType;
 }
 
-export const Contacts = ({ className }: ContactsProps) => {
+export const Contacts = ({ className, titleTag = 'h2' }: ContactsProps) => {
     const { t } = useTranslation();
     const { setIsOpen } = useModal();
 
@@ -17,9 +20,9 @@ export const Contacts = ({ className }: ContactsProps) => {
         <section className={cn(cls.Contacts, {}, [className, 'section'])}>
             <div className={cls.container}>
                 <div className={cls.contentColumn}>
-                    <h2 className={`${cls.title} title`}>
+                    <Text as={titleTag} className={`${cls.title} title`}>
                         {t('contact-title')} <span className={cls.span}>{t('contact-span')}</span>
-                    </h2>
+                    </Text>
                     <p className={`${cls.text} text`}>{t('contact-text')}</p>
                     <Button onClick={() => setIsOpen(true)} className='contactsBtn'>
                         {t('send-request')}
@@ -30,7 +33,9 @@ export const Contacts = ({ className }: ContactsProps) => {
                     <div className={cls.contactBlock}>
                         <div className={cls.contactData}>
                             <p className={cls.caption}>E-mail</p>
-                            <p className='text'>email@rs.com</p>
+                            <a className={cls.email} href={'mailto:email@email.com'}>
+                                email@rs.com
+                            </a>
                         </div>
                         <div className={cls.contactData}>
                             <p className={cls.caption}>{t('address')}</p>

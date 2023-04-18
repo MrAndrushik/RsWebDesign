@@ -53,6 +53,7 @@ export default function AnalysisPage() {
                 data={stepsData}
                 title={t('pre-project-analysis')!}
                 description={t('pre-project-analysis-description')!}
+                titleTag={'h1'}
             />
             <AdvantagesBlock data={advantagesData} title={t('advantages')!} button={false} />
             <ProjectsList title={t('example-of-same-work')} type='gallery' />

@@ -1,11 +1,10 @@
-import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
-import cls from './Footer.module.scss';
 import Logo from '@assets/img/footer-logo.svg';
-import { Link } from 'react-router-dom';
 import { ROUTES } from '@utils/const';
-import { Input } from '@components/UI/Input/Input';
-import { Button } from '@components/UI/Button/Button';
+import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import cls from './Footer.module.scss';
+import { FooterForm } from './FooterForm/FooterForm';
 
 interface FooterProps {
     className?: string;
@@ -21,7 +20,9 @@ export const Footer = ({ className }: FooterProps) => {
                     <div className={cls.column1}>
                         <img loading='lazy' src={Logo} alt='RocketSoft' />
                         <div className={cls.contactData}>
-                            <p>email@rs.com</p>
+                            <a className={cls.email} href={'mailto:email@email.com'}>
+                                email@rs.com
+                            </a>
                             <p>Россия, г. Москва ул. Производственная 11/8</p>
                         </div>
                     </div>
@@ -34,8 +35,13 @@ export const Footer = ({ className }: FooterProps) => {
                                 </Link>
                             </li>
                             <li className={cls.navigationItem}>
+                                <Link className={cls.link} to={ROUTES.ABOUT_ROUTE}>
+                                    {t('about-us')}
+                                </Link>
+                            </li>
+                            <li className={cls.navigationItem}>
                                 <Link className={cls.link} to={ROUTES.PROJECTS_ROUTE}>
-                                    {t('portfolio')}
+                                    {t('our-projects')}
                                 </Link>
                             </li>
                             <li className={cls.navigationItem}>
@@ -67,19 +73,7 @@ export const Footer = ({ className }: FooterProps) => {
                     </nav>
                     <div className={cls.column4}>
                         <p className={cls.caption}>{t('connect-with-us')}</p>
-                        <form className={cls.form}>
-                            <div className={cls.inputsBlock}>
-                                <label>
-                                    <p className={cls.inputText}>{t('name')}</p>
-                                    <Input type='light' placeholder={t('name')!} required />
-                                </label>
-                                <label>
-                                    <p className={cls.inputText}>e-mail</p>
-                                    <Input type='light' placeholder={t('name')!} required />
-                                </label>
-                            </div>
-                            <Button className='footerBtn'>{t('send')}</Button>
-                        </form>
+                        <FooterForm />
                     </div>
                 </div>
                 <p className={cls.company}>

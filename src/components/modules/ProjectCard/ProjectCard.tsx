@@ -9,6 +9,8 @@ import { ROUTES } from '@utils/const';
 import { Link } from 'react-router-dom';
 import { useHover } from '@hooks/useHover';
 import { Transition } from '@headlessui/react';
+import { ElementType } from 'react';
+import { Text } from '@components/UI/Text/Text';
 
 interface ProjectCardProps {
     className?: string;
@@ -17,9 +19,10 @@ interface ProjectCardProps {
         ProjectType,
         'title' | 'description' | 'textColor' | 'bgColor' | 'previewImg' | 'firstScreenImg' | 'id'
     >;
+    titleTag?: ElementType;
 }
 
-export const ProjectCard = ({ className, type = 'small', project }: ProjectCardProps) => {
+export const ProjectCard = ({ className, type = 'small', project, titleTag = 'h3' }: ProjectCardProps) => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
     const [hoverRef, isHovered] = useHover<HTMLDivElement>();
@@ -66,7 +69,9 @@ export const ProjectCard = ({ className, type = 'small', project }: ProjectCardP
         <div ref={hoverRef} className={cls.wrapperSmall}>
             <div style={{ background: project.bgColor }} className={cls.blockSmall}>
                 <div style={{ color: project.textColor }} className={cls.contentSmall}>
-                    <h2 className={cls.titleSmall}>{project.title}</h2>
+                    <Text as={titleTag} className={cls.titleSmall}>
+                        {project.title}
+                    </Text>
                     <p className={cls.textSmall}>{project.description}</p>
                 </div>
                 <img loading='lazy' className={cls.imgSmall} src={project.previewImg} alt='Background' />

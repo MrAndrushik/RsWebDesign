@@ -1,10 +1,13 @@
-import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
-import cls from './ProjectsGallery.module.scss';
-import { ProjectType } from 'types/types';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProjectCard } from '@components/modules/ProjectCard/ProjectCard';
 import { useMobile } from '@hooks/useMobile';
+import cn from 'classnames';
+import { Navigation, Mousewheel } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { ProjectType } from 'types/types';
+import cls from './ProjectsGallery.module.scss';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 interface ProjectsGalleryProps {
     className?: string;
@@ -13,17 +16,19 @@ interface ProjectsGalleryProps {
 }
 
 export const ProjectsGallery = ({ className, data, title }: ProjectsGalleryProps) => {
-    const { t } = useTranslation();
     const { isMobile } = useMobile();
 
     return (
         <section className={cn(cls.ProjectsGallery, {}, [className, 'section'])}>
             <h2 className={`${cls.title} title`}>{title}</h2>
             <Swiper
+                mousewheel={true}
                 className={cls.swiper}
                 spaceBetween={30}
                 slidesPerView={'auto'}
                 centeredSlides={true}
+                modules={[Navigation, Mousewheel]}
+                navigation
                 pagination={{ clickable: true }}
                 breakpoints={{
                     1024: {

@@ -62,6 +62,12 @@ button {
     }
 }
 
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .section {
     padding: 130px 16px;
 

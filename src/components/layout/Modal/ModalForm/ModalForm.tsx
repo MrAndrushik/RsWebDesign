@@ -1,18 +1,14 @@
 import { ReactComponent as CloseIcon } from '@assets/icons/close-modal.svg';
+import { Button } from '@components/UI/Button/Button';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useRef, useState } from 'react';
+import { useModal } from '@hooks/useModal';
+import { Fragment, useRef } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import cls from './ModalForm.module.scss';
-import { Button } from '@components/UI/Button/Button';
-import { useModal } from '@hooks/useModal';
-
-// interface ModalFromProps {
-//     className?: string;
-// }
 
 type Inputs = {
-    name: string;
+    firstName: string;
     surname: string;
     email: string;
     tel: string;
@@ -22,7 +18,8 @@ type Inputs = {
 export default function ModalForm() {
     const { t } = useTranslation();
     const { isOpen, setIsOpen } = useModal();
-    const completeInputRef = useRef(null);
+    const firstInputRef = useRef<HTMLInputElement | null>(null);
+
     const {
         register,
         handleSubmit,
@@ -30,15 +27,11 @@ export default function ModalForm() {
     } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
+    const { ref, ...restInputProps } = register('firstName', { required: true });
+
     return (
         <Transition show={isOpen} as={Fragment}>
-            <Dialog
-                static
-                initialFocus={completeInputRef}
-                className={cls.dialog}
-                open={isOpen}
-                onClose={() => setIsOpen(false)}
-            >
+            <Dialog initialFocus={firstInputRef} className={cls.dialog} open={isOpen} onClose={() => setIsOpen(false)}>
                 <Transition.Child
                     as={Fragment}
                     enter={cls.transition}
@@ -71,10 +64,13 @@ export default function ModalForm() {
                                             placeholder={t('name')!}
                                             className={cls.input}
                                             type='text'
-                                            {...register('name', { required: true })}
-                                            ref={completeInputRef}
+                                            {...restInputProps}
+                                            ref={(e) => {
+                                                ref(e);
+                                                firstInputRef.current = e;
+                                            }}
                                         />
-                                        {errors.name?.type === 'required' && (
+                                        {errors.firstName?.type === 'required' && (
                                             <span className={cls.error}>{t('required-field')}</span>
                                         )}
                                     </label>

@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import eslint from 'vite-plugin-eslint';
 import svgr from 'vite-plugin-svgr';
+import Pages from 'vite-plugin-pages';
+import generateSitemap from 'vite-plugin-pages-sitemap';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,5 +20,14 @@ export default defineConfig({
             '@hooks': path.resolve(__dirname, './src/hooks/'),
         },
     },
-    plugins: [svgr(), eslint(), react()],
+    plugins: [
+        svgr(),
+        eslint(),
+        react(),
+        Pages({
+            onRoutesGenerated: (routes) => {
+                generateSitemap({ routes });
+            },
+        }),
+    ],
 });

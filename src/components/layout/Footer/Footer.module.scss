@@ -2,6 +2,9 @@
 .Footer {
     background: $dark-brown;
     padding: 50px 16px;
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
 
     @media (max-width: $lg) {
         padding: 24px 40px 50px;
@@ -14,6 +17,7 @@
 
 .container {
     max-width: 1300px;
+    width: 100%;
     margin: 0 auto;
     font-size: 18px;
     line-height: 20px;
@@ -89,35 +93,6 @@
     width: 250px;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.inputsBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.inputText {
-    margin-bottom: 5px;
-    position: relative;
-    display: inline-block;
-
-    &:after {
-        width: 6px;
-        height: 7px;
-        content: '';
-        position: absolute;
-        right: -10px;
-        top: 0;
-        background: url('@assets/icons/required.svg') no-repeat center center;
-        background-size: contain;
-    }
-}
-
 .company {
     margin-top: 50px;
 
@@ -128,4 +103,11 @@
     @media (max-width: $md) {
         margin-top: 96px;
     }
+}
+
+.email {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Anonymous Pro';
 }

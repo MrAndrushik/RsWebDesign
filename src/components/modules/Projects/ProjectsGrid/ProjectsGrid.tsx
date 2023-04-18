@@ -2,18 +2,21 @@ import { Spinner } from '@components/UI/Spinner/Spinner';
 import { ProjectCard } from '@components/modules/ProjectCard/ProjectCard';
 import { useProjectsData } from '@hooks/useProjectsData';
 import cn from 'classnames';
-import { useMemo, useState } from 'react';
+import { ElementType, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ProjectType } from 'types/types';
 import cls from './ProjectsGrid.module.scss';
+import { Text } from '@components/UI/Text/Text';
 
 interface ProjectsGridProps {
     className?: string;
     data: ProjectType[];
     title: string;
+    titleTag?: ElementType;
+    cardTitleTag?: ElementType;
 }
 
-export const ProjectsGrid = ({ className, data, title }: ProjectsGridProps) => {
+export const ProjectsGrid = ({ className, data, title, titleTag = 'h2', cardTitleTag }: ProjectsGridProps) => {
     const { t } = useTranslation();
     const [activeCategory, setActiveCategory] = useState<string>(t('category-all')!);
 
@@ -30,7 +33,9 @@ export const ProjectsGrid = ({ className, data, title }: ProjectsGridProps) => {
         <section className={cn(cls.ProjectsGrid, {}, [className])}>
             <div className={cls.block}>
                 <div className={cls.top}>
-                    <h2 className={`${cls.title} title`}>{title}</h2>
+                    <Text as={titleTag} className={`${cls.title} title`}>
+                        {title}
+                    </Text>
                     {isLoading ? (
                         <Spinner style={{ width: '20px', height: '20px' }} type='single' />
                     ) : categories?.length ? (
@@ -67,6 +72,7 @@ export const ProjectsGrid = ({ className, data, title }: ProjectsGridProps) => {
                 <div className={cls.grid}>
                     {sortedData?.map((project) => (
                         <ProjectCard
+                            titleTag={cardTitleTag}
                             type='small'
                             key={project.id}
                             project={{

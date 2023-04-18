@@ -1,21 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Golos+Text:wght@400;700&display=swap');
-
-// Почему не подключается
-// @font-face {
-//     font-family: 'Golos';
-//     src: url('../assets/fonts/GolosText-Bold.woff2') format('woff2') url('../assets/fonts/GolosText-Bold.woff')
-//         format('woff');
-//     font-weight: 700;
-//     font-style: normal;
-// }
-
-// @font-face {
-//     font-family: 'Golos';
-//     src: url('../assets/fonts/GolosText-Regular.woff2') format('woff2') url('../assets/fonts/GolosText-Regular.woff')
-//         format('woff');
-//     font-weight: 400;
-//     font-style: normal;
-// }
+// @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Golos+Text:wght@400;700&display=swap');
 
 @font-face {
     font-family: 'Anonymous Pro';
@@ -32,6 +15,24 @@
         url('../assets/fonts/anonymousprobold.woff2') format('woff2'),
         url('../assets/fonts/anonymousprobold.woff') format('woff'),
         url('../assets/fonts/anonymousprobold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('../assets/fonts/GolosText-Regular.woff2') format('woff2'),
+        url('../assets/fonts/GolosText-Regular.woff') format('woff'),
+        url('../assets/fonts/GolosText-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('../assets/fonts/GolosText-Bold.woff2') format('woff2'),
+        url('../assets/fonts/GolosText-Bold.woff') format('woff'),
+        url('../assets/fonts/GolosText-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }

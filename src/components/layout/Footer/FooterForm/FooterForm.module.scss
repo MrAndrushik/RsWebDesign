@@ -1,0 +1,58 @@
+@import '@styles/consts';
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.inputsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputText {
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+        width: 6px;
+        height: 7px;
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 0;
+        background: url('@assets/icons/required.svg') no-repeat center center;
+        background-size: contain;
+    }
+}
+
+.error {
+    font-size: 14px;
+    color: #eb5050;
+}
+
+.input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 36px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    background: transparent;
+    padding: 0 10px;
+    font-family: 'Anonymous Pro';
+    border: 1px solid #f3eeea;
+    color: #fff;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $blue;
+    }
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
+}

@@ -12,7 +12,7 @@ import { useModal } from '@hooks/useModal';
 export const Header = () => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
-    const { setIsOpen: openModal } = useModal();
+    const { isOpen: isModalOpen, setIsOpen: openModal } = useModal();
     const [isOpen, setIsOpen] = useState(false);
 
     interface HeaderLinks {
@@ -65,12 +65,13 @@ export const Header = () => {
     );
 
     const location = useLocation();
+    // window.innerWidth - document.documentElement.clientWidth
 
     return (
         <>
             <header
                 className={cn(cls.container, {
-                    // [cls.containerOpenModal]: isModalOpen,
+                    [cls.containerHidden]: isModalOpen,
                 })}
             >
                 <div className={cls.block}>
@@ -129,7 +130,11 @@ export const Header = () => {
                     </nav>
                 </div>
             </header>
-            <div className={cls.mockHeader}></div>
+            <div
+                className={cn(cls.mockHeader, {
+                    [cls.mockHeaderHidden]: isModalOpen,
+                })}
+            ></div>
         </>
     );
 };

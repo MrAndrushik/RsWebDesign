@@ -66,6 +66,7 @@ export default function MobileDevelopmentPage() {
     return (
         <>
             <Steps
+                titleTag={'h1'}
                 color={'#FFA220'}
                 data={stepsData}
                 title={t('mobile-development')!}

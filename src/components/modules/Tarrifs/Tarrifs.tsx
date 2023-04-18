@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
-import cls from './Tarrifs.module.scss';
+import { useTranslation } from 'react-i18next';
 import { ITarrif } from 'types/types';
+import cls from './Tarrifs.module.scss';
 
 interface TarrifsProps {
     className?: string;

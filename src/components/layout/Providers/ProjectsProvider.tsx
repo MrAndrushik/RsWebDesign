@@ -11,7 +11,7 @@ interface ProjectsContextType {
 const defaultValue: ProjectsContextType = {
     data: [],
     categories: [],
-    isLoading: false,
+    isLoading: true,
 };
 
 interface ProjectsProviderProps {
@@ -21,7 +21,7 @@ interface ProjectsProviderProps {
 export const ProjectsContext = createContext<ProjectsContextType>(defaultValue);
 
 export const ProjectsProvider = ({ children }: ProjectsProviderProps) => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState<ProjectType[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [error, setError] = useState<number>();

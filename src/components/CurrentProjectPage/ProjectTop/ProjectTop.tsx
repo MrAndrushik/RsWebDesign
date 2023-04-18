@@ -29,7 +29,7 @@ export const ProjectTop = ({
         <section style={{ background: bgColor }} className={cn(cls.ProjectTop, {}, [])}>
             <div className={cls.block}>
                 <div style={{ color: textColor }} className={cls.content}>
-                    <h2 className={cls.title}>{title}</h2>
+                    <h1 className={cls.title}>{title}</h1>
                     <p className={cls.text}>{description}</p>
                     {appStoreLink && (
                         <a href={appStoreLink} target='blank' className={cls.appLink}>

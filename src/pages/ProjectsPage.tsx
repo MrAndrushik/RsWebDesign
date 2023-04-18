@@ -7,7 +7,7 @@ export default function ProjectsPage() {
 
     return (
         <>
-            <ProjectsList type='grid' title={t('our-projects')} />
+            <ProjectsList titleTag={'h1'} cardTitleTag={'h2'} type='grid' title={t('our-projects')} />
             <Contacts />
         </>
     );

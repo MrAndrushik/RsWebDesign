@@ -16,6 +16,7 @@ const ContactPage = React.lazy(() => import('@pages/ContactPage'));
 const ProjectsPage = React.lazy(() => import('@pages/ProjectsPage'));
 const CurrentProjectPage = React.lazy(() => import('@pages/CurrentProjectPage'));
 const ServicesPage = React.lazy(() => import('@pages/ServicesPage'));
+const PrivacyPage = React.lazy(() => import('@pages/Privacy/PrivacyPage'));
 
 const routerObj: NewRouteObject[] = [
     {
@@ -64,6 +65,14 @@ const routerObj: NewRouteObject[] = [
                 path: ROUTES.CURRENT_PROJECT_ROUTE,
                 element: <CurrentProjectPage />,
                 errorElement: <ErrorPage type='withHeader' />,
+            },
+            {
+                path: ROUTES.PRIVACY_ROUTE,
+                element: <PrivacyPage />,
+            },
+            {
+                path: ROUTES.TERMS_ROUTE,
+                element: <PrivacyPage />,
             },
         ],
     },

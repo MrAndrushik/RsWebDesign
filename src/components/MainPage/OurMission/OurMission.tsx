@@ -1,9 +1,9 @@
+import { Button } from '@components/UI/Button/Button';
 import { Subtitle } from '@components/UI/Subtitle/Subtitle';
+import { useModal } from '@hooks/useModal';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import cls from './OurMission.module.scss';
-import { Button } from '@components/UI/Button/Button';
-import { useModal } from '@hooks/useModal';
 
 interface OurMissionProps {
     className?: string;

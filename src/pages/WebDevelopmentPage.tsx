@@ -66,6 +66,7 @@ export default function WebDevelopmentPage() {
     return (
         <>
             <Steps
+                titleTag={'h1'}
                 color={'#D66300'}
                 data={stepsData}
                 title={t('web-development')!}

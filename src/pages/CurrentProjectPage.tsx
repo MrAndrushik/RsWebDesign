@@ -13,13 +13,16 @@ export default function CurrentProjectPage() {
     const params = useParams<{ slug: string }>();
     const { data, isLoading } = useProjectsData();
     const currentData = useMemo(() => data.filter((project) => project.id === params.slug)[0], [data, params.slug]);
+    console.log(isLoading);
 
     if (isLoading) return <Spinner type='withHeader' />;
-    if (!currentData)
+
+    if (!currentData && !isLoading) {
         throw new Response('', {
             status: 404,
             statusText: 'Not Found',
         });
+    }
 
     return (
         <>

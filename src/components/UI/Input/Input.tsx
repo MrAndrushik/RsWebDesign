@@ -9,7 +9,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Input = ({ className, type = 'dark', ...props }: InputProps) => {
     return (
         <input
-            {...props}
             className={cn(
                 cls.Input,
                 {
@@ -18,6 +17,7 @@ export const Input = ({ className, type = 'dark', ...props }: InputProps) => {
                 },
                 [className]
             )}
+            {...props}
         ></input>
     );
 };
