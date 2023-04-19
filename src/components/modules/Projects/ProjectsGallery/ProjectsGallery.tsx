@@ -1,7 +1,7 @@
 import { ProjectCard } from '@components/modules/ProjectCard/ProjectCard';
 import { useMobile } from '@hooks/useMobile';
 import cn from 'classnames';
-import { Navigation, Mousewheel } from 'swiper';
+import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProjectType } from 'types/types';
 import cls from './ProjectsGallery.module.scss';
@@ -22,12 +22,12 @@ export const ProjectsGallery = ({ className, data, title }: ProjectsGalleryProps
         <section className={cn(cls.ProjectsGallery, {}, [className, 'section'])}>
             <h2 className={`${cls.title} title`}>{title}</h2>
             <Swiper
-                mousewheel={true}
+                // mousewheel={true}
                 className={cls.swiper}
                 spaceBetween={30}
                 slidesPerView={'auto'}
                 centeredSlides={true}
-                modules={[Navigation, Mousewheel]}
+                modules={[Navigation]}
                 navigation
                 pagination={{ clickable: true }}
                 breakpoints={{

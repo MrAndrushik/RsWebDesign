@@ -50,11 +50,13 @@ export default function CurrentProjectPage() {
                 bg_text_color={currentData.bg_text_color}
                 images={currentData.images}
             />
-            <ProjectTechnicalPart
-                bg_color={currentData.bg_color}
-                bg_text_color={currentData.bg_text_color}
-                tech={currentData.tech}
-            />
+            {currentData.tech && (
+                <ProjectTechnicalPart
+                    bg_color={currentData.bg_color}
+                    bg_text_color={currentData.bg_text_color}
+                    tech={currentData.tech}
+                />
+            )}
             <Contacts />
         </>
     );

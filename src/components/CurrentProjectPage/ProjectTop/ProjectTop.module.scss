@@ -91,19 +91,45 @@
     }
 }
 
+.linksWrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .appLink {
     width: fit-content;
     display: flex;
     height: 100%;
-    margin-top: 40px;
+    align-items: center;
+    transition: all 0.2s ease;
 
-    @media (max-width: $lg) {
-        margin-top: 10px;
+    &:hover {
+        opacity: 0.8;
     }
+}
+
+.icon {
+    height: 40px;
+    width: auto;
 
     @media (max-width: $md) {
-        max-width: 90px;
-        height: auto;
-        margin-top: 0;
+        height: 34px;
     }
+}
+
+.appleIcon {
+}
+
+.googleIcon {
+    width: 160px;
+    height: auto;
+
+    @media (max-width: $md) {
+        width: 133px;
+    }
+}
+
+.webIcon {
 }

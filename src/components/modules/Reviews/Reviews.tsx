@@ -4,7 +4,7 @@ import cls from './Reviews.module.scss';
 import { Subtitle } from '@components/UI/Subtitle/Subtitle';
 import Reviewer from '@assets/img/review.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Mousewheel } from 'swiper';
+import { Navigation } from 'swiper';
 import { useMemo } from 'react';
 
 import 'swiper/css';
@@ -77,9 +77,9 @@ export const Reviews = ({ className }: ReviewsProps) => {
             <div className={cls.block}>
                 <Subtitle style={{ background: '#FFA220', color: '#fff' }}>{t('reviews')}</Subtitle>
                 <Swiper
-                    mousewheel={true}
+                    // mousewheel={true}
                     className={cls.swiper}
-                    modules={[Navigation, Mousewheel]}
+                    modules={[Navigation]}
                     spaceBetween={30}
                     slidesPerView={'auto'}
                     centeredSlides={true}

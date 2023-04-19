@@ -17,6 +17,7 @@ const ProjectsPage = React.lazy(() => import('@pages/ProjectsPage'));
 const CurrentProjectPage = React.lazy(() => import('@pages/CurrentProjectPage'));
 const ServicesPage = React.lazy(() => import('@pages/ServicesPage'));
 const PrivacyPage = React.lazy(() => import('@pages/Privacy/PrivacyPage'));
+const TermsPage = React.lazy(() => import('@pages/Privacy/TermsPage'));
 
 const routerObj: NewRouteObject[] = [
     {
@@ -72,7 +73,7 @@ const routerObj: NewRouteObject[] = [
             },
             {
                 path: ROUTES.TERMS_ROUTE,
-                element: <PrivacyPage />,
+                element: <TermsPage />,
             },
         ],
     },

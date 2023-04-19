@@ -10,5 +10,5 @@ export const ROUTES = {
     CURRENT_PROJECT_ROUTE: '/projects/:slug' as const,
     SERVICES_ROUTE: '/services' as const,
     PRIVACY_ROUTE: '/privacy' as const,
-    TERMS_ROUTE: '/privacy#terms' as const,
+    TERMS_ROUTE: '/terms' as const,
 };

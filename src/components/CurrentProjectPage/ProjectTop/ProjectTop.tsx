@@ -1,4 +1,6 @@
 import { ReactComponent as AppStore } from '@assets/icons/appstore.svg';
+import GooglePlay from '@assets/icons/google-play.avif';
+import { ReactComponent as WebApp } from '@assets/icons/webapp.svg';
 import cn from 'classnames';
 import { ProjectType } from 'types/types';
 import cls from './ProjectTop.module.scss';
@@ -31,21 +33,23 @@ export const ProjectTop = ({
                 <div style={{ color: bg_text_color }} className={cls.content}>
                     <h1 className={cls.title}>{title}</h1>
                     <p className={cls.text}>{short_description}</p>
-                    {app_store_link && (
-                        <a href={app_store_link} target='blank' className={cls.appLink}>
-                            <AppStore />
-                        </a>
-                    )}
-                    {/* {google_play_link && (
-                        <a href={google_play_link} target='blank' className={cls.appLink}>
-                            <AppStore />
-                        </a>
-                    )}
-                    {web_link && (
-                        <a href={web_link} target='blank' className={cls.appLink}>
-                            <AppStore />
-                        </a>
-                    )} */}
+                    <div className={cls.linksWrapper}>
+                        {app_store_link && (
+                            <a href={app_store_link} target='blank' className={cls.appLink}>
+                                <AppStore className={`${cls.appleIcon} ${cls.icon}`} />
+                            </a>
+                        )}
+                        {google_play_link && (
+                            <a href={google_play_link} target='blank' className={cls.appLink}>
+                                <img className={`${cls.googleIcon} ${cls.icon}`} src={GooglePlay} alt='googlePlay' />
+                            </a>
+                        )}
+                        {web_link && (
+                            <a href={web_link} target='blank' className={cls.appLink}>
+                                <WebApp className={`${cls.webIcon} ${cls.icon}`} />
+                            </a>
+                        )}
+                    </div>
                 </div>
                 <img loading='lazy' className={cls.img} src={header_image} alt='Background' />
             </div>
