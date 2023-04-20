@@ -96,6 +96,15 @@
     gap: 10px;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 40px;
+
+    @media (max-width: $lg) {
+        margin-top: 20px;
+    }
+
+    @media (max-width: $md) {
+        margin-top: 0;
+    }
 }
 
 .appLink {
@@ -115,7 +124,7 @@
     width: auto;
 
     @media (max-width: $md) {
-        height: 34px;
+        height: 30px;
     }
 }
 
@@ -123,12 +132,7 @@
 }
 
 .googleIcon {
-    width: 160px;
-    height: auto;
-
-    @media (max-width: $md) {
-        width: 133px;
-    }
+    border-radius: 5px;
 }
 
 .webIcon {

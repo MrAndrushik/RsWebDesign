@@ -1,5 +1,5 @@
 import { ReactComponent as AppStore } from '@assets/icons/appstore.svg';
-import GooglePlay from '@assets/icons/google-play.avif';
+import GooglePlay from '@assets/icons/google-play.png';
 import { ReactComponent as WebApp } from '@assets/icons/webapp.svg';
 import cn from 'classnames';
 import { ProjectType } from 'types/types';
