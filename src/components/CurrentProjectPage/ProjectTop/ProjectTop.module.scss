@@ -87,8 +87,7 @@
 
   @media (max-width: $lg) {
     position: relative;
-    width: -webkit-fill-available;
-    object-fit: contain;
+    width: auto;
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto;
