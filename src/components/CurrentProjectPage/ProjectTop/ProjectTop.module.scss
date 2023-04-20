@@ -1,138 +1,143 @@
 @import '@styles/consts';
 
-.block {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-    max-width: 1320px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    justify-content: center;
-    padding-bottom: 33px;
-    padding: 200px 16px 170px;
-    position: relative;
-    z-index: 1;
+.ProjectTop {
+  height: auto;
+}
 
-    @media (max-width: $lg) {
-        padding: 0;
-        gap: 20px;
-    }
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+  padding-bottom: 33px;
+  padding: 200px 16px 170px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: $lg) {
+    padding: 0;
+    gap: 20px;
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 636px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 636px;
 
-    @media (max-width: $xl) {
-        max-width: 500px;
-    }
+  @media (max-width: $xl) {
+    max-width: 500px;
+  }
 
-    @media (max-width: $lg) {
-        padding: 28px;
-        gap: 15px;
-        padding-bottom: 0;
-        max-width: 100%;
-    }
+  @media (max-width: $lg) {
+    padding: 28px;
+    gap: 15px;
+    padding-bottom: 0;
+    max-width: 100%;
+  }
 }
 
 .title {
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 77px;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
 
-    @media (max-width: $lg) {
-        font-size: 40px;
-        line-height: 50px;
-    }
+  @media (max-width: $lg) {
+    font-size: 40px;
+    line-height: 50px;
+  }
 
-    @media (max-width: $md) {
-        font-size: 28px;
-        line-height: 38px;
-    }
+  @media (max-width: $md) {
+    font-size: 28px;
+    line-height: 38px;
+  }
 }
 
 .text {
-    font-size: 24px;
-    line-height: 27px;
-    font-weight: 700;
+  font-size: 24px;
+  line-height: 27px;
+  font-weight: 700;
 
-    @media (max-width: $lg) {
-        font-weight: 400;
-    }
+  @media (max-width: $lg) {
+    font-weight: 400;
+  }
 
-    @media (max-width: $md) {
-        font-size: 16px;
-        line-height: 18px;
-    }
+  @media (max-width: $md) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 .img {
-    z-index: -1;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    max-height: 100%;
-    max-width: 650px;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+  max-width: 650px;
 
-    @media (max-width: $xl) {
-        max-width: 450px;
-    }
+  @media (max-width: $xl) {
+    max-width: 450px;
+  }
 
-    @media (max-width: $lg) {
-        position: relative;
-        width: -webkit-fill-available;
-        object-fit: contain;
-        max-width: 500px;
-        max-height: 500px;
-        margin: 0 auto;
-    }
+  @media (max-width: $lg) {
+    position: relative;
+    width: -webkit-fill-available;
+    object-fit: contain;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+    margin-top: auto;
+  }
 }
 
 .linksWrapper {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
 
-    @media (max-width: $lg) {
-        margin-top: 20px;
-    }
+  @media (max-width: $lg) {
+    margin-top: 20px;
+  }
 
-    @media (max-width: $md) {
-        margin-top: 0;
-    }
+  @media (max-width: $md) {
+    margin-top: 0;
+  }
 }
 
 .appLink {
-    width: fit-content;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    transition: all 0.2s ease;
+  width: fit-content;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  transition: all 0.2s ease;
 
-    &:hover {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .icon {
-    height: 40px;
-    width: auto;
+  height: 40px;
+  width: auto;
 
-    @media (max-width: $md) {
-        height: 30px;
-    }
+  @media (max-width: $md) {
+    height: 30px;
+  }
 }
 
 .appleIcon {
 }
 
 .googleIcon {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .webIcon {
