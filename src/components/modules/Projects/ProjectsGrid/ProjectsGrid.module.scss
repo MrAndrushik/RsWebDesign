@@ -38,7 +38,7 @@
     @media (max-width: $lg) {
         grid-template-columns: 1fr;
         gap: 50px;
-        grid-auto-rows: minmax(auto, auto);
+        grid-auto-rows: unset;
     }
 }
 
