@@ -110,6 +110,12 @@
     flex-direction: column;
 }
 
+.wrapperGrid {
+    @media (max-width: $md) {
+        height: auto;
+    }
+}
+
 .blockSmall {
     display: flex;
     flex-direction: column;

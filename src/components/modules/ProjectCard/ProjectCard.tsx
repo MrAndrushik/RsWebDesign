@@ -15,6 +15,7 @@ import { Text } from '@components/UI/Text/Text';
 interface ProjectCardProps {
     className?: string;
     type?: 'large' | 'small';
+    isGrid?: boolean;
     project: Pick<
         ProjectType,
         'title' | 'short_description' | 'bg_text_color' | 'bg_color' | 'preview_image' | 'header_image' | 'id'
@@ -22,7 +23,7 @@ interface ProjectCardProps {
     titleTag?: ElementType;
 }
 
-export const ProjectCard = ({ className, type = 'small', project, titleTag = 'h3' }: ProjectCardProps) => {
+export const ProjectCard = ({ className, type = 'small', project, titleTag = 'h3', isGrid }: ProjectCardProps) => {
     const { t } = useTranslation();
     const { isMobile } = useMobile();
     const [hoverRef, isHovered] = useHover<HTMLDivElement>();
@@ -66,7 +67,12 @@ export const ProjectCard = ({ className, type = 'small', project, titleTag = 'h3
     }
 
     return (
-        <div ref={hoverRef} className={cls.wrapperSmall}>
+        <div
+            ref={hoverRef}
+            className={cn(cls.wrapperSmall, {
+                [cls.wrapperGrid]: isGrid,
+            })}
+        >
             <div style={{ background: project.bg_color }} className={cls.blockSmall}>
                 <div style={{ color: project.bg_text_color }} className={cls.contentSmall}>
                     <Text as={titleTag} className={cls.titleSmall}>

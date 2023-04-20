@@ -74,6 +74,7 @@ export const ProjectsGrid = ({ className, data, title, titleTag = 'h2', cardTitl
                         <ProjectCard
                             titleTag={cardTitleTag}
                             type='small'
+                            isGrid={true}
                             key={project.id}
                             project={{
                                 bg_color: project.bg_color,
